@@ -13,10 +13,8 @@ create table cadastro(
     nome varchar (50) not null,
 	Nascimento varchar (50),
     endereço varchar (100),
-    CPF int (11) not null,
+    cpf int (11) not null,
 	email varchar (50),
 	tel int (9),
     cargo varchar (30) not null
 );
-show tables;
-describe cadastro;

@@ -1,27 +1,24 @@
 package model;
 
-public class Javabeans {
+public class JavaBeans {
 	
 	private String nome;
 	private String salario;
 	private String idcad;  
 	private String Nascimento ;
 	private String endereço ;
-	private String CPF ;
+	private String cpf ;
 	private String email ;
 	private String tel ;
 	private String cargo;
 	private String id;
 	
-	
-	
-	public Javabeans() {
+	public JavaBeans() {
 		super();
 		
 	}
-	git
 	
-	public Javabeans(String nome, String salario, String idcad, String nascimento, String endereço, String cPF,
+	public JavaBeans(String nome, String salario, String idcad, String nascimento, String endereço, String cpf,
 			String email, String tel, String cargo, String id) {
 		super();
 		this.nome = nome;
@@ -29,20 +26,13 @@ public class Javabeans {
 		this.idcad = idcad;
 		Nascimento = nascimento;
 		this.endereço = endereço;
-		CPF = cPF;
+		this.cpf = cpf;
 		this.email = email;
 		this.tel = tel;
 		this.cargo = cargo;
 		this.id = id;
 	}
 
-
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
 	public String getNome() {
 		return nome;
 	}
@@ -73,11 +63,11 @@ public class Javabeans {
 	public void setEndereço(String endereço) {
 		this.endereço = endereço;
 	}
-	public String getCPF() {
-		return CPF;
+	public String getCpf() {
+		return cpf;
 	}
-	public void setCPF(String cPF) {
-		CPF = cPF;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 	public String getEmail() {
 		return email;
@@ -96,6 +86,12 @@ public class Javabeans {
 	}
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 	
