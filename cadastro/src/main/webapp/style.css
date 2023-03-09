@@ -14,4 +14,22 @@ body{
 	color: yellow;
 	font-size: 1,5em;
 	border-radius: 5px;
+	border: 0;
+	cursor: pointer;
+}
+
+.place1{
+	width: 400px;
+	padding: 5px;
+	margin-bottom: 15px;
+	border: 1px solide white;
+	border-radius: 5px;
+}
+
+.place2{
+	width: 350px;
+	padding: 5px;
+	margin-bottom: 15px;
+	border: 1px solide green;
+	border-radius: 5px;
 }

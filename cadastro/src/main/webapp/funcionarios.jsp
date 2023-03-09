@@ -11,6 +11,6 @@
 <body>
 
 	<h1>Pesquisa de Funcionarios</h1>
-	<a href="" class=botao>Cadastrar funcionario</a>
+	<a href="novofuncionario.html" class=botao>Cadastrar funcionario</a>
 </body>
 </html>
