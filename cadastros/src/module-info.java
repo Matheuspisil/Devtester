@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author mathe
- *
- */
-module cadastros {
-}
