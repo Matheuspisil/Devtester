@@ -1,19 +1,18 @@
-function validar()
-{
-    let nome = frmnovo.nome.value
-    let cpf = frmnovo.cpf.value
-    let cargo = frmnovo.cargo.value
-    if (nome === "" ) {
+function validar(){
+    let nome = frmNovo.nome.value
+    let cpf = frmNovo.cpf.value
+    let cargo = frmNovo.cargo.value
+    if (nome === ""){
         alert('Preencha o campo nome')
-        frmnovo.nome.focus()
+        frmNovo.nome.focus()
         return false
-    } else if (cpf === "" ) {
+    } else if (cpf === ""){
         alert('Preencha o campo cpf')
-        frmnovo.cpf.focus()
+        frmNovo.cpf.focus()
         return false
-    }else if (cargo === "" ) {
+    }else if (cargo === ""){
         alert('Preencha o campo cargo')
-        frmnovo.cargo.focus()
+        frmNovo.cargo.focus()
         return false
     }else {
         document.forms["frmNovo"].submit()
