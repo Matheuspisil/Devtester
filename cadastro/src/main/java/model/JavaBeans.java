@@ -24,7 +24,7 @@ public class JavaBeans {
 		this.nome = nome;
 		this.salario = salario;
 		this.idcad = idcad;
-		Nascimento = nascimento;
+		this.Nascimento = nascimento;
 		this.endereço = endereço;
 		this.cpf = cpf;
 		this.email = email;
