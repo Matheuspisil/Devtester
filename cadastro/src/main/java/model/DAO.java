@@ -37,7 +37,7 @@ public class DAO {
 
 	/** crud **/
 	public void inserirFuncionario(JavaBeans funcionario) {
-		String createf = "insert into cadastro (nome,cpf,cargo) values (?,?,?)";
+		String createf = "insert into cadastro (nome,cpf,cargo) values (?,?,?,?,?,?,?)";
 		try {
 			Connection con = conectar();
 
@@ -46,10 +46,10 @@ public class DAO {
 			pst.setString(1, funcionario.getNome());
 			pst.setString(2, funcionario.getCpf());
 			pst.setString(3, funcionario.getCargo());
-			pst.setString(3, funcionario.getNascimento());
-			pst.setString(3, funcionario.getEndereco());
-			pst.setString(3, funcionario.getEmail());
-			pst.setString(3, funcionario.getTel());
+			pst.setString(4, funcionario.getNascimento());
+			pst.setString(5, funcionario.getEndereco());
+			pst.setString(6, funcionario.getEmail());
+			pst.setString(7, funcionario.getTel());
 
 			pst.executeUpdate();
 
