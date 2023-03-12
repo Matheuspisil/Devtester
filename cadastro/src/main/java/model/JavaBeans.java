@@ -2,16 +2,16 @@ package model;
 
 public class JavaBeans {
 	
-	private String nome;
-	private String salario;
 	private String idcad;  
+	private String nome;
+	private String cpf ;
+	private String cargo;
 	private String Nascimento ;
 	private String endereço ;
-	private String cpf ;
 	private String email ;
 	private String tel ;
-	private String cargo;
-	private String id;
+	
+	
 	
 	public JavaBeans() {
 		super();
@@ -22,46 +22,28 @@ public class JavaBeans {
 			String email, String tel, String cargo, String id) {
 		super();
 		this.nome = nome;
-		this.salario = salario;
+		this.cpf = cpf;
+		this.cargo = cargo;
 		this.idcad = idcad;
 		this.Nascimento = nascimento;
 		this.endereço = endereço;
-		this.cpf = cpf;
 		this.email = email;
 		this.tel = tel;
-		this.cargo = cargo;
-		this.id = id;
+		
+		
 	}
-
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getSalario() {
-		return salario;
-	}
-	public void setSalario(String salario) {
-		this.salario = salario;
-	}
+	
 	public String getIdcad() {
 		return idcad;
 	}
 	public void setIdcad(String idcad) {
 		this.idcad = idcad;
 	}
-	public String getNascimento() {
-		return Nascimento;
+	public String getNome() {
+		return nome;
 	}
-	public void setNascimento(String nascimento) {
-		Nascimento = nascimento;
-	}
-	public String getEndereço() {
-		return endereço;
-	}
-	public void setEndereço(String endereço) {
-		this.endereço = endereço;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	public String getCpf() {
 		return cpf;
@@ -69,6 +51,25 @@ public class JavaBeans {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+	public String getCargo() {
+		return cargo;
+	}
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
+	}
+	public String getNascimento() {
+		return Nascimento;
+	}
+	public void setNascimento(String nascimento) {
+		Nascimento = nascimento;
+	}
+	public String getEndereco() {
+		return endereço;
+	}
+	public void setEndereco(String endereço) {
+		this.endereço = endereço;
+	}
+	
 	public String getEmail() {
 		return email;
 	}
@@ -81,18 +82,8 @@ public class JavaBeans {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
-	public String getCargo() {
-		return cargo;
-	}
-	public void setCargo(String cargo) {
-		this.cargo = cargo;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
+	
+
 	
 	
 }

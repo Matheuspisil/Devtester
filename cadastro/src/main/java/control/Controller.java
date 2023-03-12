@@ -55,6 +55,12 @@ public class Controller extends HttpServlet {
 		funcionarios.setNome(request.getParameter("email"));
 		funcionarios.setNome(request.getParameter("tel"));
 		funcionarios.setNome(request.getParameter("cargo"));
+		
+		// insert funcionario
+		
+		dao.inserirFuncionario(funcionarios);
+		
+		response.sendRedirect("main");
 	}
 	
 }
