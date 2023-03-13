@@ -1,7 +1,10 @@
+
+
 function validar(){
     let nome = frmNovo.nome.value
     let cpf = frmNovo.cpf.value
     let cargo = frmNovo.cargo.value
+    
     if (nome === ""){
         alert('Preencha o campo nome')
         frmNovo.nome.focus()

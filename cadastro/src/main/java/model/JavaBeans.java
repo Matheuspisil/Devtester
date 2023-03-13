@@ -6,8 +6,8 @@ public class JavaBeans {
 	private String nome;
 	private String cpf ;
 	private String cargo;
-	private String Nascimento ;
-	private String endereço ;
+	private String narcimento ;
+	private String endereco ;
 	private String email ;
 	private String tel ;
 	
@@ -18,15 +18,15 @@ public class JavaBeans {
 		
 	}
 	
-	public JavaBeans(String nome, String salario, String idcad, String nascimento, String endereço, String cpf,
-			String email, String tel, String cargo, String id) {
+	public JavaBeans(String idcad, String nome, String cpf, String cargo,  String nascimento, String endereco, 
+			String email, String tel, String narcimento) {
 		super();
+		this.idcad = idcad;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.cargo = cargo;
-		this.idcad = idcad;
-		this.Nascimento = nascimento;
-		this.endereço = endereço;
+		this.narcimento = narcimento;
+		this.endereco = endereco;
 		this.email = email;
 		this.tel = tel;
 		
@@ -57,17 +57,17 @@ public class JavaBeans {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-	public String getNascimento() {
-		return Nascimento;
+	public String getNarcimento() {
+		return narcimento;
 	}
-	public void setNascimento(String nascimento) {
-		Nascimento = nascimento;
+	public void setNarcimento(String narcimento) {
+		this.narcimento = narcimento;
 	}
 	public String getEndereco() {
-		return endereço;
+		return endereco;
 	}
-	public void setEndereco(String endereço) {
-		this.endereço = endereço;
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 	
 	public String getEmail() {
@@ -82,6 +82,8 @@ public class JavaBeans {
 	public void setTel(String tel) {
 		this.tel = tel;
 	}
+
+	
 	
 
 	
