@@ -90,10 +90,26 @@ public class Controller extends HttpServlet {
 
 		response.sendRedirect("main");
 	}
-	protected void listarFuncionario(HttpServletRequest request, HttpServletResponse Response) {
+	protected void listarFuncionario(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException{
 		String idcad = request.getParameter("idcad");
+		
 		funcionarios.setIdcad(idcad);
-		dao.inserirFuncionario(funcionarios);
+		
+		dao.selectFuncionario(funcionarios);
+		
+		request.setAttribute("idcad",funcionarios.getIdcad());
+		request.setAttribute("nome",funcionarios.getNome());
+		request.setAttribute("cpf",funcionarios.getCpf());
+		request.setAttribute("cargo",funcionarios.getCargo());
+		request.setAttribute("narcimento",funcionarios.getNarcimento());
+		request.setAttribute("endereco",funcionarios.getEndereco());
+		request.setAttribute("email",funcionarios.getEmail());
+		request.setAttribute("tel",funcionarios.getTel());
+		
+		RequestDispatcher rd = request.getRequestDispatcher("editorfuncionario.jsp");
+		rd.forward(request, response);
+		/**
 		System.out.println(funcionarios.getIdcad());
 		System.out.println(funcionarios.getNome());
 		System.out.println(funcionarios.getCpf());
@@ -101,7 +117,7 @@ public class Controller extends HttpServlet {
 		System.out.println(funcionarios.getNarcimento());
 		System.out.println(funcionarios.getEndereco());
 		System.out.println(funcionarios.getEmail());
-		System.out.println(funcionarios.getTel());
+		System.out.println(funcionarios.getTel());**/
 		
 	}
 }

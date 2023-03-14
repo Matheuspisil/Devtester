@@ -18,8 +18,8 @@ public class JavaBeans {
 		
 	}
 	
-	public JavaBeans(String idcad, String nome, String cpf, String cargo,  String nascimento, String endereco, 
-			String email, String tel, String narcimento) {
+	public JavaBeans(String idcad, String nome, String cpf, String cargo,  String narcimento, String endereco, 
+			String email, String tel) {
 		super();
 		this.idcad = idcad;
 		this.nome = nome;

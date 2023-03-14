@@ -83,7 +83,7 @@ public class DAO {
 				String email = rs.getString(7);
 				String tel = rs.getString(8);
 
-				funcionariosa.add(new JavaBeans(idcad, nome, cpf, cargo, narcimento, endereco, email, tel, tel));
+				funcionariosa.add(new JavaBeans(idcad, nome, cpf, cargo, narcimento, endereco, email, tel));
 			}
 			con.close();
 			return funcionariosa;
@@ -94,23 +94,23 @@ public class DAO {
 		}
 	}
 
-	public void selectFuncionario(JavaBeans funcionario) {
+	public void selectFuncionario(JavaBeans funcionarios) {
 		String read2 = "select * from cadastra where idcad = ?";
 		try {
 			Connection con = conectar();
 			PreparedStatement pst = con.prepareStatement(read2);
-			pst.setString(1, funcionario.getIdcad());
+			pst.setString(1, funcionarios.getIdcad());
 			ResultSet rs = pst.executeQuery();
 
 			while (rs.next()) {
-				funcionario.setIdcad(rs.getString(1));
-				funcionario.setNome(rs.getString(2));
-				funcionario.setCpf(rs.getString(3));
-				funcionario.setCargo(rs.getString(4));
-				funcionario.setNarcimento(rs.getString(5));
-				funcionario.setEndereco(rs.getString(6));
-				funcionario.setEmail(rs.getString(7));
-				funcionario.setTel(rs.getString(8));
+				funcionarios.setIdcad(rs.getString(1));
+				funcionarios.setNome(rs.getString(2));
+				funcionarios.setCpf(rs.getString(3));
+				funcionarios.setCargo(rs.getString(4));
+				funcionarios.setNarcimento(rs.getString(5));
+				funcionarios.setEndereco(rs.getString(6));
+				funcionarios.setEmail(rs.getString(7));
+				funcionarios.setTel(rs.getString(8));
 			}
 			con.close();
 		} catch (Exception e) {

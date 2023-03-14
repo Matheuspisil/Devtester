@@ -25,7 +25,13 @@ body{
 	border: 1px solide white;
 	border-radius: 5px;
 }
-
+#place2{
+	width: 400px;
+	padding: 5px;
+	margin-bottom: 15px;
+	border: 2px solide red;
+	border-radius: 5px;
+}
 #table{
 	margin-top: 50px;
 	margin-left: 100px;
@@ -46,7 +52,7 @@ body{
 #table td{
 	border: 1px solide balck;
 	padding: 15px;
-	color: yellow;
+	color: black;
 	margin-top: 50px;
 	margin-right:50px;	
 	
