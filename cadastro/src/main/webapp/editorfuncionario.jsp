@@ -10,7 +10,7 @@
 </head>
 <body>
 	<h1>Editar funcionario</h1>
-	<form name="frmNovo" action="insert">
+	<form name="frmNovo" action="update">
 		<table>
 			<tr>
 				<td><input type="text" name="idcad" id="place2" readonly value="<%out.print(request.getAttribute("idcad"));%>"></td>

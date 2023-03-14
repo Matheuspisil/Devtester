@@ -117,4 +117,22 @@ public class DAO {
 			System.out.println(e);
 		}
 	}
-}
+	public void alterarFunCadastrado (JavaBeans funcionarios) {
+		String creat = "update cadastra set nome=?,cpf=?,cargo=?,narcimento=?,endereco=?,email=?,tel=? where idcad=?";
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(creat);
+			pst.setString(1, funcionarios.getNome());
+			pst.setString(2, funcionarios.getCpf());
+			pst.setString(3, funcionarios.getCargo());
+			pst.setString(4, funcionarios.getNarcimento());
+			pst.setString(5, funcionarios.getEndereco());
+			pst.setString(6, funcionarios.getEmail());
+			pst.setString(7, funcionarios.getTel());
+			pst.executeUpdate();
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+	}
