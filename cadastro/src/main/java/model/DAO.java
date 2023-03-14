@@ -129,7 +129,9 @@ public class DAO {
 			pst.setString(5, funcionarios.getEndereco());
 			pst.setString(6, funcionarios.getEmail());
 			pst.setString(7, funcionarios.getTel());
+			
 			pst.executeUpdate();
+			
 			con.close();
 		} catch (Exception e) {
 			System.out.println(e);
