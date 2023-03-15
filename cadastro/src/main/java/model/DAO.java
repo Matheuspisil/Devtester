@@ -48,7 +48,7 @@ public class DAO {
 			pst.setString(1, funcionario.getNome());
 			pst.setString(2, funcionario.getCpf());
 			pst.setString(3, funcionario.getCargo());
-			pst.setString(4, funcionario.getNarcimento());
+			pst.setString(4, funcionario.getNascimento());
 			pst.setString(5, funcionario.getEndereco());
 			pst.setString(6, funcionario.getEmail());
 			pst.setString(7, funcionario.getTel());
@@ -78,12 +78,12 @@ public class DAO {
 				String nome = rs.getString(2);
 				String cpf = rs.getString(3);
 				String cargo = rs.getString(4);
-				String narcimento = rs.getString(5);
+				String nascimento = rs.getString(5);
 				String endereco = rs.getString(6);
 				String email = rs.getString(7);
 				String tel = rs.getString(8);
 
-				funcionariosa.add(new JavaBeans(idcad, nome, cpf, cargo, narcimento, endereco, email, tel));
+				funcionariosa.add(new JavaBeans(idcad, nome, cpf, cargo, nascimento, endereco, email, tel));
 			}
 			con.close();
 			return funcionariosa;
@@ -107,7 +107,7 @@ public class DAO {
 				funcionarios.setNome(rs.getString(2));
 				funcionarios.setCpf(rs.getString(3));
 				funcionarios.setCargo(rs.getString(4));
-				funcionarios.setNarcimento(rs.getString(5));
+				funcionarios.setNascimento(rs.getString(5));
 				funcionarios.setEndereco(rs.getString(6));
 				funcionarios.setEmail(rs.getString(7));
 				funcionarios.setTel(rs.getString(8));
@@ -125,7 +125,7 @@ public class DAO {
 			pst.setString(1, funcionarios.getNome());
 			pst.setString(2, funcionarios.getCpf());
 			pst.setString(3, funcionarios.getCargo());
-			pst.setString(4, funcionarios.getNarcimento());
+			pst.setString(4, funcionarios.getNascimento());
 			pst.setString(5, funcionarios.getEndereco());
 			pst.setString(6, funcionarios.getEmail());
 			pst.setString(7, funcionarios.getTel());

@@ -6,7 +6,7 @@ public class JavaBeans {
 	private String nome;
 	private String cpf ;
 	private String cargo;
-	private String narcimento ;
+	private String nascimento ;
 	private String endereco ;
 	private String email ;
 	private String tel ;
@@ -18,14 +18,14 @@ public class JavaBeans {
 		
 	}
 	
-	public JavaBeans(String idcad, String nome, String cpf, String cargo,  String narcimento, String endereco, 
+	public JavaBeans(String idcad, String nome, String cpf, String cargo,  String nascimento, String endereco, 
 			String email, String tel) {
 		super();
 		this.idcad = idcad;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.cargo = cargo;
-		this.narcimento = narcimento;
+		this.nascimento = nascimento;
 		this.endereco = endereco;
 		this.email = email;
 		this.tel = tel;
@@ -57,11 +57,11 @@ public class JavaBeans {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-	public String getNarcimento() {
-		return narcimento;
+	public String getNascimento() {
+		return nascimento;
 	}
-	public void setNarcimento(String narcimento) {
-		this.narcimento = narcimento;
+	public void setNascimento(String narcimento) {
+		this.nascimento = narcimento;
 	}
 	public String getEndereco() {
 		return endereco;

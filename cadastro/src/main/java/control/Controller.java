@@ -71,7 +71,7 @@ public class Controller extends HttpServlet {
 		System.out.println(request.getParameter("nome"));
 		System.out.println(request.getParameter("cpf"));
 		System.out.println(request.getParameter("cargo"));
-		System.out.println(request.getParameter("narcimento"));
+		System.out.println(request.getParameter("nascimento"));
 		System.out.println(request.getParameter("endereço"));
 		System.out.println(request.getParameter("email"));
 		System.out.println(request.getParameter("tel"));
@@ -79,7 +79,7 @@ public class Controller extends HttpServlet {
 		funcionarios.setNome(request.getParameter("nome"));
 		funcionarios.setCpf(request.getParameter("cpf"));
 		funcionarios.setCargo(request.getParameter("cargo"));
-		funcionarios.setNarcimento(request.getParameter("narcimento"));
+		funcionarios.setNarcimento(request.getParameter("nascimento"));
 		funcionarios.setEndereco(request.getParameter("endereco"));
 		funcionarios.setEmail(request.getParameter("email"));
 		funcionarios.setTel(request.getParameter("tel"));
@@ -103,7 +103,7 @@ public class Controller extends HttpServlet {
 		request.setAttribute("nome", funcionarios.getNome());
 		request.setAttribute("cpf", funcionarios.getCpf());
 		request.setAttribute("cargo", funcionarios.getCargo());
-		request.setAttribute("narcimento", funcionarios.getNarcimento());
+		request.setAttribute("nascimento", funcionarios.getNascimento());
 		request.setAttribute("endereco", funcionarios.getEndereco());
 		request.setAttribute("email", funcionarios.getEmail());
 		request.setAttribute("tel", funcionarios.getTel());
@@ -129,7 +129,7 @@ public class Controller extends HttpServlet {
 		funcionarios.setNome(request.getParameter("nome"));
 		funcionarios.setCpf(request.getParameter("cpf"));
 		funcionarios.setCargo(request.getParameter("cargo"));
-		funcionarios.setNarcimento(request.getParameter("narcimento"));
+		funcionarios.setNascimento(request.getParameter("nascimento"));
 		funcionarios.setEndereco(request.getParameter("endereco"));
 		funcionarios.setEmail(request.getParameter("email"));
 		funcionarios.setTel(request.getParameter("tel"));
