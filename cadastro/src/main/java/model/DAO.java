@@ -39,7 +39,7 @@ public class DAO {
 
 	/** crud **/
 	public void inserirFuncionario(JavaBeans funcionario) {
-		String createf = "insert into cadastra (nome,cpf,cargo,narcimento,endereco,email,tel) values (?,?,?,?,?,?,?)";
+		String createf = "insert into cadastra (nome,cpf,cargo,nascimento,endereco,email,tel) values (?,?,?,?,?,?,?)";
 		try {
 			Connection con = conectar();
 
@@ -117,8 +117,9 @@ public class DAO {
 			System.out.println(e);
 		}
 	}
-	public void alterarFunCadastrado (JavaBeans funcionarios) {
-		String creat = "update cadastra set nome=?,cpf=?,cargo=?,narcimento=?,endereco=?,email=?,tel=? where idcad=?";
+
+	public void alterarFunCadastrado(JavaBeans funcionarios) {
+		String creat = "UPDATE cadastra SET nome=?,cpf=?,cargo=?,nascimento=?,endereco=?,email=?,tel=? WHERE idcad=?";
 		try {
 			Connection con = conectar();
 			PreparedStatement pst = con.prepareStatement(creat);
@@ -129,12 +130,27 @@ public class DAO {
 			pst.setString(5, funcionarios.getEndereco());
 			pst.setString(6, funcionarios.getEmail());
 			pst.setString(7, funcionarios.getTel());
-			
+			pst.setString(8, funcionarios.getIdcad());
+
 			pst.executeUpdate();
-			
+
 			con.close();
 		} catch (Exception e) {
 			System.out.println(e);
 		}
 	}
+
+	public void deletarFuncionario(JavaBeans funcionarios) {
+		String delete = "delete from cadastra where idcad=?";
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(delete);
+			pst.setString(1, funcionarios.getIdcad());
+			pst.executeUpdate();
+			con.close();
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
+}

@@ -25,7 +25,7 @@
 				<td><input type="text" name="cargo" class="place1" value="<%out.print(request.getAttribute("cargo"));%>"></td>
 			</tr>
 			<tr>
-				<td><input type="text" name="narcimento" class="place1" value="<%out.print(request.getAttribute("narcimento"));%>"></td>
+				<td><input type="text" name="narcimento" class="place1" value="<%out.print(request.getAttribute("nascimento"));%>"></td>
 			</tr>
 			<tr>
 				<td><input type="text" name="endereco" class="place1" value="<%out.print(request.getAttribute("endereco"));%>"></td>
@@ -37,12 +37,6 @@
 			<tr>
 				<td><input type="text" name="tel" class="place1" value="<%out.print(request.getAttribute("tel"));%>"></td>
 			</tr>
-			<tr>
-				<td><input type="text" name="telefone" placeholder="Telefone"
-					class="place1"></td>
-			</tr>
-
-
 		</table>
 		<input type="button" value="Salvar" class="botao" onclick="validar()">
 	</form>

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.DAO;
 import model.JavaBeans;
 
-@WebServlet(urlPatterns = { "/Controller", "/main", "/insert", "/select", "/update" })
+@WebServlet(urlPatterns = { "/Controller", "/main", "/insert", "/select", "/update", "/delete" })
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	DAO dao = new DAO();
@@ -38,6 +38,8 @@ public class Controller extends HttpServlet {
 			listarFuncionario(request, response);
 		} else if (action.equals("/update")) {
 			editarFuncionario(request, response);
+		} else if (action.equals("/delete")) {
+			removerFuncionario(request, response);
 		}
 
 		else {
@@ -47,45 +49,25 @@ public class Controller extends HttpServlet {
 
 	protected void cadastros(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// dados javabens
+
 		ArrayList<JavaBeans> lista = dao.listarFuncionarios();
 
 		request.setAttribute("funcionarios", lista);
 		RequestDispatcher rd = request.getRequestDispatcher("funcionarios.jsp");
 		rd.forward(request, response);
-		/**
-		 * for (int i = 0; i < lista.size(); i++) {
-		 * System.out.println(lista.get(i).getIdcad());
-		 * System.out.println(lista.get(i).getNome());
-		 * System.out.println(lista.get(i).getCpf());
-		 * System.out.println(lista.get(i).getCargo());
-		 * System.out.println(lista.get(i).getNarcimento());
-		 * System.out.println(lista.get(i).getEndereco());
-		 * System.out.println(lista.get(i).getEmail());
-		 * System.out.println(lista.get(i).getTel()); }
-		 **/
+
 	}
 
 	protected void novoFuncionario(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println(request.getParameter("nome"));
-		System.out.println(request.getParameter("cpf"));
-		System.out.println(request.getParameter("cargo"));
-		System.out.println(request.getParameter("nascimento"));
-		System.out.println(request.getParameter("endereço"));
-		System.out.println(request.getParameter("email"));
-		System.out.println(request.getParameter("tel"));
 
 		funcionarios.setNome(request.getParameter("nome"));
 		funcionarios.setCpf(request.getParameter("cpf"));
 		funcionarios.setCargo(request.getParameter("cargo"));
-		funcionarios.setNarcimento(request.getParameter("nascimento"));
+		funcionarios.setNascimento(request.getParameter("nascimento"));
 		funcionarios.setEndereco(request.getParameter("endereco"));
 		funcionarios.setEmail(request.getParameter("email"));
 		funcionarios.setTel(request.getParameter("tel"));
-
-		// insert funcionario
-
 		dao.inserirFuncionario(funcionarios);
 
 		response.sendRedirect("main");
@@ -94,9 +76,7 @@ public class Controller extends HttpServlet {
 	protected void listarFuncionario(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String idcad = request.getParameter("idcad");
-
 		funcionarios.setIdcad(idcad);
-
 		dao.selectFuncionario(funcionarios);
 
 		request.setAttribute("idcad", funcionarios.getIdcad());
@@ -110,21 +90,13 @@ public class Controller extends HttpServlet {
 
 		RequestDispatcher rd = request.getRequestDispatcher("editorfuncionario.jsp");
 		rd.forward(request, response);
-		/**
-		 * System.out.println(funcionarios.getIdcad());
-		 * System.out.println(funcionarios.getNome());
-		 * System.out.println(funcionarios.getCpf());
-		 * System.out.println(funcionarios.getCargo());
-		 * System.out.println(funcionarios.getNarcimento());
-		 * System.out.println(funcionarios.getEndereco());
-		 * System.out.println(funcionarios.getEmail());
-		 * System.out.println(funcionarios.getTel());
-		 **/
 
 	}
+
 	protected void editarFuncionario(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+		System.out.println(request.getParameter("idcon"));
+
 		funcionarios.setIdcad(request.getParameter("idcad"));
 		funcionarios.setNome(request.getParameter("nome"));
 		funcionarios.setCpf(request.getParameter("cpf"));
@@ -135,6 +107,14 @@ public class Controller extends HttpServlet {
 		funcionarios.setTel(request.getParameter("tel"));
 		dao.alterarFunCadastrado(funcionarios);
 		response.sendRedirect("main");
-		
+
+	}
+
+	protected void removerFuncionario(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String idcad = request.getParameter("idcad");
+		funcionarios.setIdcad(idcad);
+		dao.deletarFuncionario(funcionarios);
+		response.sendRedirect("main");
 	}
 }
