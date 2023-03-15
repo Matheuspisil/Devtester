@@ -6,13 +6,29 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class DAO.
+ */
 public class DAO {
 
+	/** The driver. */
 	private String driver = "com.mysql.cj.jdbc.Driver";
+	
+	/** The url. */
 	private String url = "jdbc:mysql://127.0.0.1:3306/dbcadastro?useTimezone=true&serverTimezone=UTC";
+	
+	/** The user. */
 	private String user = "root";
+	
+	/** The password. */
 	private String password = "lalaxinha20?DEDO";
 
+	/**
+	 * Conectar.
+	 *
+	 * @return the connection
+	 */
 	private Connection conectar() {
 		Connection con = null;
 		try {
@@ -27,6 +43,9 @@ public class DAO {
 
 	}
 
+	/**
+	 * Teste conexao.
+	 */
 	public void testeConexao() {
 		try {
 			Connection con = conectar();
@@ -37,7 +56,12 @@ public class DAO {
 		}
 	}
 
-	/** crud **/
+	
+	/**
+	 * Inserir funcionario.
+	 *
+	 * @param funcionario the funcionario
+	 */
 	public void inserirFuncionario(JavaBeans funcionario) {
 		String createf = "insert into cadastra (nome,cpf,cargo,nascimento,endereco,email,tel) values (?,?,?,?,?,?,?)";
 		try {
@@ -62,7 +86,12 @@ public class DAO {
 		}
 	}
 
-	/** crud read **/
+	
+	/**
+	 * Listar funcionarios.
+	 *
+	 * @return the array list
+	 */
 	public ArrayList<JavaBeans> listarFuncionarios() {
 
 		ArrayList<JavaBeans> funcionariosa = new ArrayList<>();
@@ -94,6 +123,11 @@ public class DAO {
 		}
 	}
 
+	/**
+	 * Select funcionario.
+	 *
+	 * @param funcionarios the funcionarios
+	 */
 	public void selectFuncionario(JavaBeans funcionarios) {
 		String read2 = "select * from cadastra where idcad = ?";
 		try {
@@ -118,6 +152,11 @@ public class DAO {
 		}
 	}
 
+	/**
+	 * Alterar fun cadastrado.
+	 *
+	 * @param funcionarios the funcionarios
+	 */
 	public void alterarFunCadastrado(JavaBeans funcionarios) {
 		String creat = "UPDATE cadastra SET nome=?,cpf=?,cargo=?,nascimento=?,endereco=?,email=?,tel=? WHERE idcad=?";
 		try {
@@ -140,6 +179,11 @@ public class DAO {
 		}
 	}
 
+	/**
+	 * Deletar funcionario.
+	 *
+	 * @param funcionarios the funcionarios
+	 */
 	public void deletarFuncionario(JavaBeans funcionarios) {
 		String delete = "delete from cadastra where idcad=?";
 		try {

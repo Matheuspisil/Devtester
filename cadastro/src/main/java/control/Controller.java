@@ -19,7 +19,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 import model.DAO;
 import model.JavaBeans;
 
-@WebServlet(urlPatterns = { "/Controller", "/main", "/insert", "/select", "/update", "/delete","/report" })
+@WebServlet(urlPatterns = { "/Controller", "/main", "/insert", "/select", "/update", "/delete", "/report", "/cargos" })
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	DAO dao = new DAO();
@@ -30,11 +30,19 @@ public class Controller extends HttpServlet {
 
 	}
 
+	/**
+	 * Do get.
+	 *
+	 * @param request  the request
+	 * @param response the response
+	 * @throws ServletException the servlet exception
+	 * @throws IOException      Signals that an I/O exception has occurred.
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		String action = request.getServletPath();
-		System.out.println(action);
+
 		if (action.equals("/main")) {
 			cadastros(request, response);
 			dao.testeConexao();
@@ -46,8 +54,9 @@ public class Controller extends HttpServlet {
 			editarFuncionario(request, response);
 		} else if (action.equals("/delete")) {
 			removerFuncionario(request, response);
-		}
-		else if (action.equals("/report")) {
+		} else if (action.equals("/report")) {
+			relatorio(request, response);
+		} else if (action.equals("/report")) {
 			relatorio(request, response);
 		}
 
@@ -126,25 +135,26 @@ public class Controller extends HttpServlet {
 		dao.deletarFuncionario(funcionarios);
 		response.sendRedirect("main");
 	}
+
 	protected void relatorio(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Document documento = new Document();
 		try {
 			response.setContentType("apllication/pdf");
 			response.addHeader("content-Disposition", "inline; filename=" + "funcionarios.pdf");
-			PdfWriter.getInstance(documento,  response.getOutputStream());
+			PdfWriter.getInstance(documento, response.getOutputStream());
 			documento.open();
 			documento.add(new Paragraph("Lista de Funcionarios"));
 			documento.add(new Paragraph(" "));
 			PdfPTable tabela = new PdfPTable(8);
 			PdfPCell col1 = new PdfPCell(new Paragraph("ID"));
 			PdfPCell col2 = new PdfPCell(new Paragraph("Nome"));
-			PdfPCell col3 = new PdfPCell(new Paragraph("CPF")); 
-			PdfPCell col4 = new PdfPCell(new Paragraph("Cargo")); 
-			PdfPCell col5 = new PdfPCell(new Paragraph("Nascimento")); 
-			PdfPCell col6 = new PdfPCell(new Paragraph("Endereço")); 
-			PdfPCell col7 = new PdfPCell(new Paragraph("E-mail")); 
-			PdfPCell col8 = new PdfPCell(new Paragraph("Telefone")); 
+			PdfPCell col3 = new PdfPCell(new Paragraph("CPF"));
+			PdfPCell col4 = new PdfPCell(new Paragraph("Cargo"));
+			PdfPCell col5 = new PdfPCell(new Paragraph("Nascimento"));
+			PdfPCell col6 = new PdfPCell(new Paragraph("Endereço"));
+			PdfPCell col7 = new PdfPCell(new Paragraph("E-mail"));
+			PdfPCell col8 = new PdfPCell(new Paragraph("Telefone"));
 			tabela.addCell(col1);
 			tabela.addCell(col2);
 			tabela.addCell(col3);
@@ -154,7 +164,7 @@ public class Controller extends HttpServlet {
 			tabela.addCell(col7);
 			tabela.addCell(col8);
 			ArrayList<JavaBeans> lista = dao.listarFuncionarios();
-			for (int i = 0; i <lista.size(); i++) {
+			for (int i = 0; i < lista.size(); i++) {
 				tabela.addCell(lista.get(i).getIdcad());
 				tabela.addCell(lista.get(i).getNome());
 				tabela.addCell(lista.get(i).getCpf());
@@ -165,11 +175,16 @@ public class Controller extends HttpServlet {
 				tabela.addCell(lista.get(i).getTel());
 			}
 			documento.add(tabela);
-			
+
 			documento.close();
 		} catch (Exception e) {
 			System.out.println(e);
 			documento.close();
 		}
+	}
+
+	protected void funcionarios(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.sendRedirect("cargos.jsp");
 	}
 }

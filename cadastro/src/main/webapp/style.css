@@ -19,6 +19,13 @@ body {
 	border: 0;
 	cursor: pointer;
 }
+#ideb2{
+	position:relative;
+	top:35%;
+	left:35%;
+	transform:translate(-35%,-35%);
+	
+}
 
 .botao1 {
 	
