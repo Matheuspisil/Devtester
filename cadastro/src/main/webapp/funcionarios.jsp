@@ -16,6 +16,7 @@ ArrayList<JavaBeans> lista = (ArrayList<JavaBeans>) request.getAttribute("funcio
 <body>
 	<h1>Funcionarios</h1>
 	<a href="novofuncionario.html" class=botao>Cadastrar funcionario</a>
+	<a href="report" class=botao1>Relatorio</a>
 
 	<hr>
 

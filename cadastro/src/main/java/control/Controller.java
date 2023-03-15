@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.DAO;
 import model.JavaBeans;
 
-@WebServlet(urlPatterns = { "/Controller", "/main", "/insert", "/select", "/update", "/delete" })
+@WebServlet(urlPatterns = { "/Controller", "/main", "/insert", "/select", "/update", "/delete","/report" })
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	DAO dao = new DAO();
@@ -40,6 +40,9 @@ public class Controller extends HttpServlet {
 			editarFuncionario(request, response);
 		} else if (action.equals("/delete")) {
 			removerFuncionario(request, response);
+		}
+		else if (action.equals("/report")) {
+			relatorio(request, response);
 		}
 
 		else {
@@ -116,5 +119,9 @@ public class Controller extends HttpServlet {
 		funcionarios.setIdcad(idcad);
 		dao.deletarFuncionario(funcionarios);
 		response.sendRedirect("main");
+	}
+	protected void relatorio(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
 	}
 }
