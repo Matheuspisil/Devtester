@@ -14,13 +14,13 @@ public class DAO {
 
 	/** The driver. */
 	private String driver = "com.mysql.cj.jdbc.Driver";
-	
+
 	/** The url. */
 	private String url = "jdbc:mysql://127.0.0.1:3306/dbcadastro?useTimezone=true&serverTimezone=UTC";
-	
+
 	/** The user. */
 	private String user = "root";
-	
+
 	/** The password. */
 	private String password = "lalaxinha20?DEDO";
 
@@ -56,7 +56,6 @@ public class DAO {
 		}
 	}
 
-	
 	/**
 	 * Inserir funcionario.
 	 *
@@ -86,7 +85,6 @@ public class DAO {
 		}
 	}
 
-	
 	/**
 	 * Listar funcionarios.
 	 *

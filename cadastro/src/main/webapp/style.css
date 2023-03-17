@@ -18,23 +18,30 @@ body {
 	border-radius: 5px;
 	border: 0;
 	cursor: pointer;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
-#ideb2{
-	position:relative;
-	top:35%;
-	left:35%;
-	transform:translate(-35%,-35%);
-	
+
+#ideb2 {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .botao1 {
-	
 	text-decoration: none;
 	background-color: red;
-	padding: 10px 15px 10px 15px;
+	padding: 10px 1px 10px 1px;
 	color: white;
-	font-size: 1, 5em;
-	border-radius: 5px;
+	font-size: 1em;
+	border-radius: 2.5px;
+	position: relative;
+	bottom: 10%;
+	righth: 15%;
+	transform: translate(-10%, -15%);
 }
 
 .place1 {

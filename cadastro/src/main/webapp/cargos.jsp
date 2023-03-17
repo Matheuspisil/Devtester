@@ -26,7 +26,7 @@ ArrayList<JavaBeans> lista = (ArrayList<JavaBeans>) request.getAttribute("funcio
 				<th>Id</th>
 				<th>Nome</th>
 				<th>Cargo</th>
-				
+
 
 			</tr>
 		</thead>
@@ -39,10 +39,11 @@ ArrayList<JavaBeans> lista = (ArrayList<JavaBeans>) request.getAttribute("funcio
 				<td><%=lista.get(i).getIdcad()%></td>
 				<td><%=lista.get(i).getNome()%></td>
 				<td><%=lista.get(i).getCargo()%></td>
-				
-			<%
-			}
-			%>
+
+				<%
+				}
+				%>
+			
 		</tbody>
 
 	</table>
